@@ -3,26 +3,26 @@ import java.util.Random;
 import static java.lang.Math.abs;
 
 public abstract class Creature {
-    String name;
-    int defence;
-    int attack;
-    int range = 1;
-    int health;
-    int speed;
-    int xCoordinate;
-    boolean dead = false;
-    int specialCooldown;
-    static Random r = new Random();
-    static int numOfCreatures = 0;
-    Creature enemy;
+    protected String name;
+    protected int defence;
+    protected int attack;
+    protected int range = 1;
+    protected int health;
+    protected int speed;
+    protected int xCoordinate;
+    protected boolean dead = false;
+    protected int specialCooldown;
+    protected static Random r = new Random();
+    protected static int numOfCreatures = 0;
+    protected Creature enemy;
 
 
 
     abstract void setAttack();
     abstract void setDefence();
-    abstract void Special();
+    abstract void special();
 
-    public void Attack(){
+    public void attackEnemy(){
         int damage = attack - enemy.defence;
         if (damage < 0)
             damage = 0;
@@ -33,7 +33,7 @@ public abstract class Creature {
         enemy.die();
     }
     public void Defence(Creature target){
-        target.Attack();
+        target.attackEnemy();
     } // ????
 
     void move(int x){

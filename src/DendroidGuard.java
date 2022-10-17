@@ -18,7 +18,7 @@ public class DendroidGuard extends Creature{
     }
 
     @Override
-    void Special() {
+    void special() {
         System.out.println("SPECIAL! " + name + " roots " + enemy.name + ", its attack and defence decreased for 1 turn");
         enemy.attack -= 10;
         enemy.defence -= 10;

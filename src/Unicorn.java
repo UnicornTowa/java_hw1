@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Unicorn extends Creature{
 
     void setAttack(){
@@ -21,9 +19,9 @@ public class Unicorn extends Creature{
     }
 
     @Override
-    void Special() {
+    void special() {
         if (attack >= enemy.health + enemy.defence) {
-            Attack();
+            attackEnemy();
             return;
         }
         else {System.out.println("SPECIAL! " + name + " is swept away by the rainbow as well as debuffs. Take a break!");

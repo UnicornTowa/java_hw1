@@ -1,24 +1,24 @@
 import static java.lang.Math.abs;
 
 public class Combat {
-    Creature a;
-    Creature b;
+    private final Creature a;
+    private final Creature b;
     public Combat(Creature a, Creature b){
         this.a = a;
         this.b = b;
     }
 
-    void action(Creature actor){
+    private void action(Creature actor){
         if (abs(actor.xCoordinate - actor.enemy.xCoordinate) > actor.range){
             actor.moveToTarget();
         }
         else {
             if (actor.specialCooldown <= 0){
-                actor.Special();
+                actor.special();
                 return;
             }
             else {
-                actor.Attack();
+                actor.attackEnemy();
                 actor.setAttack();
                 actor.enemy.setDefence();
             }
