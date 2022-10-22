@@ -7,17 +7,18 @@ public class Unicorn extends Creature{
         defence = 14;
     }
 
-    public Unicorn() {
+    public Unicorn(int xCoordinate) {
         name = "Unicorn";
         defence = 14;
         health = 90;
         speed = 7;
-        xCoordinate = 25 * numOfCreatures;
+        this.xCoordinate = xCoordinate;
         setAttack();
-        numOfCreatures++;
         specialCooldown = 4;
     }
-
+    Creature makeActor(int xCoordinate){
+        return new Unicorn(xCoordinate);
+    }
     @Override
     void special() {
         if (attack >= enemy.health + enemy.defence) {

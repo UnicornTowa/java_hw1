@@ -6,14 +6,13 @@ public class DendroidGuard extends Creature{
         defence = 12;
     }
 
-    public DendroidGuard() {
+    public DendroidGuard(int xCoordinate) {
         name = "Dendroid guard";
         defence = 12;
         health = 55;
         speed = 3;
-        xCoordinate = 25 * numOfCreatures;
+        this.xCoordinate = xCoordinate;
         setAttack();
-        numOfCreatures++;
         specialCooldown = 4;
     }
 
