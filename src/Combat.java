@@ -15,10 +15,6 @@ public class Combat implements Game{
         }
         else throw new IllegalArgumentException();
     }
-//    public Combat(Creature a, Creature b){
-//        this.a = a;
-//        this.b = b;
-//    }
 
     private void action(Creature actor){
         if (abs(actor.getxCoordinate() - actor.getEnemy().getxCoordinate()) > actor.getRange()){
